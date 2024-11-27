@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './animations.css';
+@import './glass.css';
+
+@layer components {
+  .node-toolbar {
+    @apply fixed left-4 top-4 w-48 glass-effect dark:glass-effect-dark
+      p-4 rounded-xl border-[1.5px] border-gray-200/30 dark:border-gray-600/30
+      shadow-lg hover:shadow-3xl transition-all duration-500 ease-out
+      animate-fade-in-up transform hover:scale-102 hover:-translate-y-0.5 z-10;
+  }
+
+  .node-item {
+    @apply flex items-center gap-3 p-3 rounded-lg
+      glass-effect dark:glass-effect-dark
+      border-[1.5px] border-gray-200/30 dark:border-gray-600/30
+      cursor-grab transition-all duration-500 ease-out
+      hover:border-blue-300/50 dark:hover:border-blue-600/50
+      hover:shadow-3xl hover:-translate-y-0.5 group;
+  }
+
+  .workflow-canvas {
+    @apply h-full w-full bg-gradient-radial
+      from-gray-50/95 via-gray-100/95 to-gray-50/95
+      dark:from-gray-900/95 dark:via-gray-800/95 dark:to-gray-900/95
+      relative backdrop-blur-xl;
+  }
+
+  .node-handle {
+    @apply w-3 h-3 rounded-full border-[1.5px]
+      bg-gradient-to-br from-blue-400 to-purple-400
+      dark:from-blue-500 dark:to-purple-500
+      transition-all duration-300 hover:scale-125
+      shadow-lg hover:shadow-xl
+      hover:from-blue-500 hover:to-purple-500
+      dark:hover:from-blue-400 dark:hover:to-purple-400;
+  }
+
+  .node-connection {
+    @apply stroke-2 transition-all duration-300
+      from-blue-400/70 to-purple-400/70
+      dark:from-blue-500/70 dark:to-purple-500/70;
+  }
+
+  .node-connection:hover {
+    @apply stroke-[3]
+      from-blue-500 to-purple-500
+      dark:from-blue-400 dark:to-purple-400;
+  }
+
+  .customization-panel {
+    @apply fixed right-4 bottom-4 w-72
+      glass-effect dark:glass-effect-dark
+      p-4 rounded-xl border-[1.5px] border-gray-200/30 dark:border-gray-600/30
+      shadow-lg hover:shadow-3xl transition-all duration-500 ease-out
+      animate-fade-in-up transform hover:scale-102 hover:-translate-y-0.5 z-10;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300/50 dark:bg-gray-600/50
+    rounded-full hover:bg-gray-400/50
+    dark:hover:bg-gray-500/50
+    transition-colors duration-300;
+}

@@ -1,0 +1,21 @@
+app = "knowledge-window-backend"
+primary_region = "sea"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+  min_scale = 0
+  max_scale = 1
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+  min_machines_running = 0

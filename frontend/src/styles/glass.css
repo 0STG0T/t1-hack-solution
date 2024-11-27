@@ -1,0 +1,104 @@
+/* Glass Effect Base Styles */
+.glass-effect {
+  @apply bg-white/60 backdrop-blur-xl;
+  box-shadow:
+    0 8px 32px 0 rgba(59, 130, 246, 0.08),
+    0 4px 16px 0 rgba(139, 92, 246, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.glass-effect-dark {
+  @apply bg-gray-800/60 backdrop-blur-xl;
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.25),
+    0 4px 16px 0 rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.glass-effect-error {
+  @apply bg-red-50/80 backdrop-blur-xl;
+  box-shadow:
+    0 8px 32px 0 rgba(239, 68, 68, 0.12),
+    0 4px 16px 0 rgba(239, 68, 68, 0.08),
+    inset 0 0 0 1px rgba(239, 68, 68, 0.15);
+}
+
+.glass-effect-error-dark {
+  @apply bg-red-900/30 backdrop-blur-xl;
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.25),
+    0 4px 16px 0 rgba(239, 68, 68, 0.15),
+    inset 0 0 0 1px rgba(239, 68, 68, 0.2);
+}
+
+/* Hover Effects */
+.hover\:glass-effect-hover:hover {
+  @apply bg-white/70 transition-all duration-500;
+  box-shadow:
+    0 12px 48px 0 rgba(59, 130, 246, 0.12),
+    0 6px 24px 0 rgba(139, 92, 246, 0.08),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.hover\:glass-effect-dark-hover:hover {
+  @apply bg-gray-800/70 transition-all duration-500;
+  box-shadow:
+    0 12px 48px 0 rgba(0, 0, 0, 0.35),
+    0 6px 24px 0 rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Animation Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 8px 32px 0 rgba(59, 130, 246, 0.08),
+      0 4px 16px 0 rgba(139, 92, 246, 0.06),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 16px 48px 0 rgba(59, 130, 246, 0.15),
+      0 8px 24px 0 rgba(139, 92, 246, 0.1),
+      inset 0 0 0 1.5px rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Custom Scale and Transform Values */
+.scale-102 { transform: scale(1.02); }
+.scale-103 { transform: scale(1.03); }
+.scale-105 { transform: scale(1.05); }
+.rotate-1 { transform: rotate(1deg); }
+.rotate-2 { transform: rotate(2deg); }
+.-rotate-1 { transform: rotate(-1deg); }
+.-rotate-2 { transform: rotate(-2deg); }
+
+/* Enhanced Shadow Utilities */
+.shadow-3xl {
+  box-shadow:
+    0 20px 60px -12px rgba(59, 130, 246, 0.25),
+    0 8px 24px -4px rgba(139, 92, 246, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.dark .shadow-3xl {
+  box-shadow:
+    0 20px 60px -12px rgba(0, 0, 0, 0.4),
+    0 8px 24px -4px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Animation Utilities */
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
